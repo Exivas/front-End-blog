@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 
+// eslint-disable-next-line react/prop-types
 export const RichTextEditor = ({ onSave }) => {
   const editorRef = useRef(null);
 

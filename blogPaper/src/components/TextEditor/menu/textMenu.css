@@ -1,0 +1,37 @@
+button{
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 3px;
+    font-size: 16px;
+    font-family: 'roboto', sans-serif;
+    margin: 2px;
+    background-color:#00c69f ;
+    border-radius: 5px;
+    &:hover{
+        background-color: #07e7ba;
+        color:#464343;
+        position: relative;
+        top: 1px;
+    }
+}
+
+
+.menu-bar{
+    background-color: #042e33;
+    margin-bottom: 10px;
+    
+}
+.yt-control{
+    display: flex;
+    
+    justify-content: center;
+    
+}
+.format{
+    display: flex;
+    flex-direction: row;   
+    & button{
+        border: 1px solid rgba(0, 0, 0, 0);
+        max-width: 70px;
+        max-height: 45px;
+    }
+}

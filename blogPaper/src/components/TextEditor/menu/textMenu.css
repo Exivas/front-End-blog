@@ -1,37 +1,69 @@
-button{
-    border: 1px solid rgba(0, 0, 0, 0);
-    padding: 3px;
+button {
+    border: 1px solid transparent;
     font-size: 16px;
-    font-family: 'roboto', sans-serif;
-    margin: 2px;
-    background-color:#00c69f ;
+    font-family: 'Roboto', sans-serif;
+    margin: 5px;
+    background-color: #00c69f;
+    color: #fff;
     border-radius: 5px;
-    &:hover{
-        background-color: #07e7ba;
-        color:#464343;
-        position: relative;
-        top: 1px;
-    }
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+button:hover {
+    background-color: #07e7ba;
+    color: #464343;
+    transform: translateY(-2px);
+}
 
-.menu-bar{
+.menu-bar {
     background-color: #042e33;
+    padding: 10px;
+    border-radius: 8px;
     margin-bottom: 10px;
-    
-}
-.yt-control{
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+}
+
+.yt-control {
+    display: flex;
     justify-content: center;
-    
+    margin-bottom: 10px;
 }
-.format{
+
+.yt-control input {
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.format {
     display: flex;
-    flex-direction: row;   
-    & button{
-        border: 1px solid rgba(0, 0, 0, 0);
-        max-width: 70px;
-        max-height: 45px;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.format button {
+    max-width: 70px;
+    max-height: 45px;
+}
+
+.image-uploader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.image-uploader input {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.image-uploader button {
+    margin-top: 10px;
 }

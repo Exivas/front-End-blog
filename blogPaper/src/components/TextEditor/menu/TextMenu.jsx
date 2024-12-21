@@ -95,14 +95,8 @@ const MenuBar = ({ editor }) => {
       <button onClick={() => editor.chain().focus().toggleBulletList().run()}>
         Bullet List
       </button>
-      <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
-        Clear marks
-      </button>
-      <button onClick={() => editor.chain().focus().clearNodes().run()}>
-        Clear nodes
-      </button>
       <button onClick={() => editor.chain().focus().setParagraph().run()}>
-        Paragraph
+        P
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
@@ -121,18 +115,6 @@ const MenuBar = ({ editor }) => {
         className={editor.isActive("heading", { level: 3 }) ? "is-active" : ""}
       >
         H3
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setParagraph().run()}
-        className={editor.isActive("paragraph") ? "is-active" : ""}
-      >
-        Paragraph
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHighlight().run()}
-        className={editor.isActive("highlight") ? "is-active" : ""}
-      >
-        Highlight
       </button>
       <button
         onClick={() => editor.chain().focus().setTextAlign("left").run()}

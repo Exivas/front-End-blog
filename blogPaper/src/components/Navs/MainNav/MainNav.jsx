@@ -8,6 +8,7 @@ export const MainNav = () => {
             <ul>
                 <li><Link to="/Home" >Home</Link></li>
                 <li><Link to="/Editor">Editor</Link></li>
+                <li><Link to="/Summary">Summary</Link></li>
             </ul>
         </nav>
     </>

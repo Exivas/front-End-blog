@@ -1,0 +1,22 @@
+.summary{
+    display:  flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+    background-color: #00c69e56;
+    & a{
+        display:  flex;
+        
+    }
+
+   
+}
+.summary a:has(> .icon) {
+    flex: 1;
+    background-color: #00c69f;
+}
+
+.icon{
+    padding: 3vh;
+    margin-right: 10px;
+}

@@ -25,6 +25,7 @@ function App() {
           <Route path="/Editor" element={<TextEditors />} />
 
           <Route path="/Summary" element={<SummaryPages />} />
+          
           <Route path="/EditPost/:id" element={<UpdatePage />} />
 
           <Route path="/Post/:id" element={<PostDetails />} />

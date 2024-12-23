@@ -24,6 +24,9 @@ const MenuBar = ({ editor }) => {
           src: url,
           width: videoWidth,
           height: videoHeight,
+          HTMLAttributes: {
+            class: 'video-container'
+          }
         })
         .run();
     }

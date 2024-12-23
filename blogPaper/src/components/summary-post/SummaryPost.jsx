@@ -1,5 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './summary.css'
+
 
 const SummaryPost = () => {
     const [posts, setPosts] = useState([])
@@ -23,10 +26,12 @@ const SummaryPost = () => {
         {posts.length > 0 ? (
             posts.map((post) => (
                 <div key={post.id}>
-                    <a href="">
+                    <Link to={`/Post/${post.id}`}>
                     <h2>{post.title}</h2>
-                    </a>
-                    
+                    </Link>
+                    <Link to={`/EditPost/${post.id}`}>
+              <button>Edit Post</button>
+            </Link>
                 </div>
             ))
         ) : (

@@ -1,11 +1,27 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import './TextMenu.css'
+
+//!MUI Imports 
+import { Button, ButtonGroup,Box} from "@mui/material";
+import { green, red} from "@mui/material/colors";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
+import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";
+import FormatAlignRightIcon from "@mui/icons-material/FormatAlignRight";
+import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+import CodeIcon from "@mui/icons-material/Code";
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+
+import "./TextMenu.css";
 
 const MenuBar = ({ editor }) => {
   const [imageUrl, setImageUrl] = useState("");
-  const [imageWidth, setImageWidth] = useState("");
-  const [imageHeight, setImageHeight] = useState("");
+  const [imageWidth, setImageWidth] = useState(250);
+  const [imageHeight, setImageHeight] = useState(300);
   const [height, setHeight] = useState(480);
   const [width, setWidth] = useState(640);
 
@@ -25,8 +41,8 @@ const MenuBar = ({ editor }) => {
           width: videoWidth,
           height: videoHeight,
           HTMLAttributes: {
-            class: 'video-container'
-          }
+            class: "video-container",
+          },
         })
         .run();
     }
@@ -59,94 +75,112 @@ const MenuBar = ({ editor }) => {
       <div className="control-group">
         <div className="button-group">
 
-          <div className="yt-control">
-          <input
-            type="number"
-            min="320"
-            max="1024"
-            placeholder="width"
-            value={width}
-            onChange={(e) => setWidth(e.target.value)}
-          />
-          <input
-            type="number"
-            min="180"
-            max="720"
-            placeholder="height"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-          />
-          <button onClick={addYoutubeVideo}>Add YouTube video</button>
-          </div>
-         
 
+          <Box className="yt-control">
+            <input
+              type="number"
+              min="320"
+              max="1024"
+              placeholder="width"
+              value={width}
+              onChange={(e) => setWidth(e.target.value)}
+            />
+            <input
+              type="number"
+              min="180"
+              max="720"
+              placeholder="height"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+            />
+            <Button sx={{ backgroundColor: red['A200'], '&:hover': { backgroundColor: red['A700'] } }} onClick={addYoutubeVideo}><VideoCallIcon color="error"/></Button>
+          </Box>
         </div>
       </div>
-      <div className="format">
-      <button onClick={() => editor.chain().focus().toggleBold().run()}>
-        Bold
-      </button>
-      <button onClick={() => editor.chain().focus().toggleItalic().run()}>
-        Italic
-      </button>
-      <button onClick={() => editor.chain().focus().toggleStrike().run()}>
-        Strike
-      </button>
-      <button onClick={() => editor.chain().focus().toggleCode().run()}>
-        Code
-      </button>
-      <button onClick={() => editor.chain().focus().toggleBulletList().run()}>
-        Bullet List
-      </button>
-      <button onClick={() => editor.chain().focus().setParagraph().run()}>
-        P
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        className={editor.isActive("heading", { level: 1 }) ? "is-active" : ""}
-      >
-        H1
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={editor.isActive("heading", { level: 2 }) ? "is-active" : ""}
-      >
-        H2
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={editor.isActive("heading", { level: 3 }) ? "is-active" : ""}
-      >
-        H3
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("left").run()}
-        className={editor.isActive({ textAlign: "left" }) ? "is-active" : ""}
-      >
-        Left
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("center").run()}
-        className={editor.isActive({ textAlign: "center" }) ? "is-active" : ""}
-      >
-        Center
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("right").run()}
-        className={editor.isActive({ textAlign: "right" }) ? "is-active" : ""}
-      >
-        Right
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("justify").run()}
-        className={editor.isActive({ textAlign: "justify" }) ? "is-active" : ""}
-      >
-        Justify
-      </button>
-      </div>
-     
+      <ButtonGroup variant="contained" color="inherit" className="format">
+        <Button  onClick={() => editor.chain().focus().toggleBold().run()}>
+          <FormatBoldIcon/>
+        </Button>
 
-      <div className="image-uploader">
+        <Button onClick={() => editor.chain().focus().toggleItalic().run()}>
+          <FormatItalicIcon />
+        </Button>
+
+        <Button onClick={() => editor.chain().focus().toggleStrike().run()}>
+          <FormatUnderlinedIcon />
+        </Button>
+
+        <Button onClick={() => editor.chain().focus().toggleCode().run()}>
+          <CodeIcon />
+        </Button>
+
+        <Button onClick={() => editor.chain().focus().toggleBulletList().run()}>
+          <FormatListBulletedIcon />
+        </Button>
+
+        <Button
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 1 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 1 }) ? "is-active" : ""
+          }
+        >
+          <strong>H1</strong>
+        </Button>
+        <Button
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 2 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 2 }) ? "is-active" : ""
+          }
+        >
+          <strong>H2</strong>
+        </Button>
+        <Button
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 3 }) ? "is-active" : ""
+          }
+        >
+         <strong>H3</strong>
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          className={editor.isActive({ textAlign: "left" }) ? "is-active" : ""}
+        >
+          <FormatAlignLeftIcon/>
+        </Button>
+
+        <Button
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          className={
+            editor.isActive({ textAlign: "center" }) ? "is-active" : ""
+          }
+        >
+          <FormatAlignCenterIcon/>
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          className={editor.isActive({ textAlign: "right" }) ? "is-active" : ""}
+        >
+          <FormatAlignRightIcon/>
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().setTextAlign("justify").run()}
+          className={
+            editor.isActive({ textAlign: "justify" }) ? "is-active" : ""
+          }
+        >
+          <FormatAlignJustifyIcon/>
+        </Button>
+      </ButtonGroup>
+
+
+      <Box sx={{ display: "flex", gap: 0.2 }}>
         <input
           type="text"
           placeholder="Image URL"
@@ -165,11 +199,13 @@ const MenuBar = ({ editor }) => {
           value={imageHeight}
           onChange={(e) => setImageHeight(e.target.value)}
         />
-        <button onClick={insertImage} disabled={!imageUrl}>
-          Insert Image
-        </button>
-
-      </div>
+        <Button variant="contained"  sx={{ 
+          backgroundColor: green['A200'], 
+          '&:hover': { backgroundColor: green['A700'],
+           } }} disableElevation onClick={insertImage} disabled={!imageUrl}>
+           <AddPhotoAlternateIcon />
+        </Button>
+      </Box>
     </div>
   );
 };

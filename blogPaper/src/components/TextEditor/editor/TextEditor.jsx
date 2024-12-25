@@ -11,42 +11,13 @@ import Image from '@tiptap/extension-image';
 import axios from 'axios';
 import MenuBar from '../menu/TextMenu';
 import './editor.css';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
-const extensions = [
-  Image.configure({
-    inline: false,
-    allowBase64: true,
-    HTMLAttributes: {
-      class: 'custom-image',
-    },
-  }).extend({
-    addAttributes() {
-      return {
-        src: {},
-        alt: { default: null },
-        with: { default: 'auto' },
-        height: { default: 'auto' },
-      };
-    }
-  }),
-  Color.configure({ types: [TextStyle.name, ListItem.name] }),
-  TextStyle.configure({ types: [ListItem.name] }),
-  TextAlign.configure({ types: ['heading', 'paragraph'] }),
-  Youtube.configure({ controls: true, nocookie: true }),
-  StarterKit.configure({
-    bulletList: { keepMarks: true, keepAttributes: false },
-    orderedList: { keepMarks: true, keepAttributes: false },
-  }),
-];
-
-const TextEditor = ({ postId }) => {
+const useFetchPost = (postId, editor) => {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const editor = useEditor({
-    extensions,
-    content: '',
-  });
 
   useEffect(() => {
     if (postId) {
@@ -68,6 +39,42 @@ const TextEditor = ({ postId }) => {
       setLoading(false);
     }
   }, [postId, editor]);
+
+  return { post, loading, error };
+};
+
+const TextEditor = ({ postId }) => {
+  const editor = useEditor({
+    extensions: [
+      Image.configure({
+        inline: false,
+        allowBase64: true,
+        HTMLAttributes: {
+          class: 'custom-image',
+        },
+      }).extend({
+        addAttributes() {
+          return {
+            src: {},
+            alt: { default: null },
+            width: { default: '250' },
+            height: { default: 'auto' },
+          };
+        }
+      }),
+      Color.configure({ types: [TextStyle.name, ListItem.name] }),
+      TextStyle.configure({ types: [ListItem.name] }),
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      Youtube.configure({ controls: true, nocookie: true }),
+      StarterKit.configure({
+        bulletList: { keepMarks: true, keepAttributes: false },
+        orderedList: { keepMarks: true, keepAttributes: false },
+      }),
+    ],
+    content: '',
+  });
+
+  const { post, loading, error } = useFetchPost(postId, editor);
 
   const handleSavePost = async () => {
     if (!editor) return;
@@ -124,9 +131,11 @@ const TextEditor = ({ postId }) => {
     <div className="editor">
       {editor && <MenuBar editor={editor} />}
       {error && <div className="error">{error}</div>}
-      <button className='btn-save' onClick={handleSubmit} disabled={loading}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
+      <Button variant="contained" size='large'  onClick={handleSubmit} disabled={loading}>
         {postId ? 'Update Post' : 'Save Post'}
-      </button>
+      </Button>
+      </Box>
       <EditorContent editor={editor} className='tiptaptext' />
     </div>
   );

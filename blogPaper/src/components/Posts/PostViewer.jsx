@@ -1,4 +1,5 @@
-// PostViewer.jsx
+/* eslint-disable react/prop-types */
+
 const PostViewer = ({ post }) => {
   return (
     <div className="post">

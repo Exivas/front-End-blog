@@ -1,5 +1,18 @@
+center{
+  font-size: 30px;
+  font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
+}
+
 [data-youtube-video] {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  .post{
+    display: flex;
+    flex-direction: column;
+  }
+.custom-image{
+  
+}

@@ -24,8 +24,7 @@ const PostDetails = () => {
     return (
         <div>
             <center><h2>{post.title}</h2></center>
-            
-            < div dangerouslySetInnerHTML={{ __html: post.content }}/>
+            < div className='post' dangerouslySetInnerHTML={{ __html: post.content }}/>
         </div>
     )
 }

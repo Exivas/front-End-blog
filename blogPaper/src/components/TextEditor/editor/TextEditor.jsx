@@ -88,7 +88,11 @@ const TextEditor = ({ postId }) => {
     };
 
     try {
-      await axios.post('http://localhost:3000/publish', postData);
+      await axios.post('http://localhost:3000/publish', postData,{
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
       alert('Post saved successfully');
     } catch (error) {
       console.error('Error saving post:', error);
@@ -111,7 +115,12 @@ const TextEditor = ({ postId }) => {
     };
 
     try {
-      await axios.put(`http://localhost:3000/publish/${postId}`, updatedPost);
+      await axios.put(`http://localhost:3000/publish/${postId}`, updatedPost ,{
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+
       alert('Post updated successfully');
     } catch (error) {
       console.error('Error updating post:', error);

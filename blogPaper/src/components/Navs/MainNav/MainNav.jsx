@@ -1,22 +1,35 @@
-import {Link} from 'react-router-dom';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Box from '@mui/material/Box';
-import { green } from '@mui/material/colors';
-export const MainNav = () => {
-  return (
-    <>
-        <nav style={{margin: '0px 0px' ,padding: '5px'}} >
-            <Box sx={{ display: 'flex', justifyContent: 'end',}}>
-            <ButtonGroup  variant="text"  color='inherit' >
-                <Button  sx={{  backgroundColor: green['A400'] }} ><Link to="/Home" >Home</Link></Button>
-                <Button  sx={{  backgroundColor: green['A400'] }} ><Link to="/Editor">Editor</Link></Button>
-                <Button  sx={{  backgroundColor: green['A400'] }} ><Link to="/Summary">Blog</Link></Button>
-            </ButtonGroup>
+import { Link } from "react-router-dom";
+import { AppBar, Toolbar, Button, Box } from "@mui/material";
+import { green } from "@mui/material/colors";
+import AuthComponent from "../../profile/AuthComponent";
+import useAuth from "../../../hooks/auth";
 
-            </Box>
-            
-        </nav>
-    </>
-  )
-}
+const MainNav = () => {
+  const { role } = useAuth();
+
+  return(
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: green["A400"], marginBottom: 2 }}
+    >
+      <AuthComponent />
+      <Toolbar>
+        <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+          {role === "admin" && (
+            <Button color="inherit" component={Link} to="/Editor">
+              Editor
+            </Button>
+          )}
+          <Button color="inherit" component={Link} to="/Summary">
+            Blog
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default MainNav;

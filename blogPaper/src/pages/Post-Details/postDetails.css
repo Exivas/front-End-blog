@@ -1,7 +1,3 @@
-center{
-  font-size: 30px;
-  font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
-}
 
 [data-youtube-video] {
     display: flex;
@@ -14,5 +10,5 @@ center{
     flex-direction: column;
   }
 .custom-image{
-  
+  margin: auto;
 }

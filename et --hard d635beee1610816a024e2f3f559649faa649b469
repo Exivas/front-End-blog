@@ -1,0 +1,71 @@
+[33mcommit 28c7378ecba1ed48d0997278adfdf4f493df7f85[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Mon Jan 27 23:26:44 2025 -0400
+
+    Update package.json
+
+[33mcommit d635beee1610816a024e2f3f559649faa649b469[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Mon Jan 27 23:26:18 2025 -0400
+
+    big update
+
+[33mcommit 8fc7e233c882a9c917676cd0684c8b028b574eca[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Fri Jan 17 15:15:57 2025 -0400
+
+    finish
+
+[33mcommit 3fa067a08fb0022671d5390587b40476356e0eb1[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Wed Dec 25 04:41:15 2024 -0400
+
+    add Resumen
+
+[33mcommit 08ebfa82a7a77c01a07c4707b7c0920a538b6887[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Mon Dec 23 01:33:32 2024 -0400
+
+    CRUD end for now
+
+[33mcommit 918c012fe7599f3e6f0caa17012f18715ae11898[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Mon Dec 23 00:00:08 2024 -0400
+
+    add update page and update component
+
+[33mcommit 23c8c97c6fbac867533b5723b3c9e14ed1419c69[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Fri Dec 20 23:53:39 2024 -0400
+
+    add summary post
+
+[33mcommit 612951ffe4ab57c93da18c48bb7e722036e6d7ae[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Thu Dec 19 17:32:15 2024 -0400
+
+    add tiptap instead of quill
+
+[33mcommit 82585fc790008ec6751f1dd55b96765003420a73[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Tue Dec 10 14:36:39 2024 -0400
+
+    update publish post
+
+[33mcommit 2773cb4e8f8c4570325d14ea01e80e2842ad86ed[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Tue Dec 10 11:47:37 2024 -0400
+
+    Update richTextEditor.jsx
+
+[33mcommit 2d97ce48266dbb95da23e32333d2b5569d64f8a5[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Sat Dec 7 21:14:33 2024 -0400
+
+    add text editor
+
+[33mcommit efd8fedcc1d1154119b1d4206dc75eee5f883b3d[m
+Author: Exivas <41807974+Exivas@users.noreply.github.com>
+Date:   Sat Dec 7 20:27:56 2024 -0400
+
+    Initial commit

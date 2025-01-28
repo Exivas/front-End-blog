@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import TextEditor from "../../components/TextEditor/Editor/TextEditor";
+import TextEditor from "../../components/TextEditor/editor/TextEditor";
 
 const UpdatePage = () => {
     const { id } = useParams(); // Cambiado de postId a id

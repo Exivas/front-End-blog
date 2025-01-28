@@ -14,7 +14,7 @@ const SummaryPost = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/publish/');
+      const response = await axios.get(`${import.meta.env.VITE_API}/publish/`);
       setPosts(response.data);
       setError(null);
     } catch (err) {
@@ -28,7 +28,7 @@ const SummaryPost = () => {
   const deletePost = async (id) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar este post?')) {
       try {
-        await axios.delete(`http://localhost:3000/publish/${id}`, {
+        await axios.delete(`${import.meta.env.VITE_API}/publish/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

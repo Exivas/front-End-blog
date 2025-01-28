@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-
-//!MUI Imports 
 import { Button, ButtonGroup,Box} from "@mui/material";
 import { green, red} from "@mui/material/colors";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -15,7 +13,7 @@ import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
 import CodeIcon from "@mui/icons-material/Code";
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-
+import FormatStrikethroughIcon from '@mui/icons-material/FormatStrikethrough';
 import "./TextMenu.css";
 
 const MenuBar = ({ editor }) => {
@@ -107,8 +105,12 @@ const MenuBar = ({ editor }) => {
         </Button>
 
         <Button onClick={() => editor.chain().focus().toggleStrike().run()}>
+          <FormatStrikethroughIcon />
+        </Button>
+        <Button onClick={() => editor.chain().focus().toggleUnderline().run()}>
           <FormatUnderlinedIcon />
         </Button>
+
 
         <Button onClick={() => editor.chain().focus().toggleCode().run()}>
           <CodeIcon />

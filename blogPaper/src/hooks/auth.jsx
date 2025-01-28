@@ -19,8 +19,9 @@ const useAuth = () => {
     }, [token, role]);
 
     const login = async (username, password) => {
+        console.log(import.meta.env.VITE_API);
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch(`${import.meta.env.VITE_API}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -3,13 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Exivas.github.io/front-End-blog/blogPaper",
+  "homepage": "https://Exivas.github.io/front-End-blog",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "dev": " vite",
+    "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
